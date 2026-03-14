@@ -7,8 +7,8 @@ const path = require('path');
 const os = require('os');
 
 // 🔥 核心修复：动态获取系统临时目录
-const IPC_FILE = path.join(os.tmpdir(), 'windsurf_ask_continue_ipc.json');
-const LOG_FILE = path.join(os.tmpdir(), 'windsurf_mcp_debug.log');
+const IPC_FILE = path.join(os.homedir(), '.windsurf_ask_continue_ipc.json');
+const LOG_FILE = path.join(os.homedir(), '.windsurf_mcp_debug.log');
 
 // 日志函数，用于排查底层调用情况
 function log(msg) { 

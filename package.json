@@ -10,5 +10,8 @@
   "main": "./extension.js",
   "activationEvents": [
     "*"
-  ]
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
 }

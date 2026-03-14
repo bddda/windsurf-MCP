@@ -3,7 +3,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 // 动态获取系统临时目录，无论 Mac 还是 Windows 都能完美运行
-const IPC_FILE = path.join(os.tmpdir(), 'windsurf_ask_continue_ipc.json');
+const IPC_FILE = path.join(os.homedir(), '.windsurf_ask_continue_ipc.json');
 
 let currentPanel = null;
 
