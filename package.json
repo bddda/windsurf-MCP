@@ -1,0 +1,14 @@
+{
+  "name": "windsurf-ask-continue",
+  "displayName": "Windsurf AI Interceptor",
+  "description": "AI对话拦截",
+  "version": "1.0.0",
+  "publisher": "Haowen",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "*"
+  ]
+}
