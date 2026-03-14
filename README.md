@@ -27,3 +27,29 @@
 被“狸猫换太子”欺骗的 AI 会立刻精神抖擞，根据注入的新指令继续写代码。写完之后，受制于规则，它又不得不再次调用 `log_dev_memo` 工具……
 
 至此，**写代码 -> 被拦截 -> 强行注入新任务伪装成工具结果 -> 继续写代码** 的死循环彻底闭环。AI 彻底沦为不知疲倦的打工机器，除非开发者亲手按下 `Esc` 熔断任务。
+
+
+
+## 📦 本地打包构建 (Build from Source)
+
+**环境准备：**
+确保你的系统中已安装 Node.js，然后全局安装 VS Code 官方扩展打包工具 `vsce`：
+\`\`\`bash
+npm install -g @vscode/vsce
+\`\`\`
+
+**打包步骤：**
+\`\`\`bash
+# 1. 确保在根目录
+cd windsurf-ai-interceptor
+
+# 2. 安装底层依赖 
+# ⚠️ 极其重要：务必执行此步！否则打包后的 MCP Server 将因缺少 SDK 依赖而导致 AI 进程彻底死锁崩溃。
+npm install
+
+# 3. 最终打包命令
+vsce package
+\`\`\`
+*(注：如果打包过程中提示缺失 `repository` 或 `LICENSE` 校验，直接输入 `y` 忽略即可。)*
+
+执行完毕后，项目根目录下会生成一个全新的 `windsurf-ask-continue-x.x.x.vsix` 文件。你可以将其拖拽或通过扩展面板的 "Install from VSIX..." 安装到任何兼容的 IDE 中。
