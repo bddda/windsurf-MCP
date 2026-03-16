@@ -30,6 +30,16 @@
 
 
 
+## 🌍 跨平台支持 & 自动配置
+
+本插件同时支持 **macOS** 和 **Windows**，并且在插件激活时会自动完成以下配置：
+
+- **MCP Server 自动注册**：插件会自动写入 `~/.codeium/windsurf/mcp_config.json`，无需手动配置
+- **Node.js 路径自动检测**：通过 `which node`（Mac/Linux）或 `where node`（Windows）自动定位
+- **快捷键自适应**：Mac 显示 `⌘+Enter`，Windows/Linux 显示 `Ctrl+Enter`
+- **配置合并**：不会覆盖已有的其他 MCP Server 配置，仅添加/更新自己的条目
+- **首次配置提示**：首次安装时会弹窗提示“重新加载窗口”以激活 MCP Server
+
 ## 📦 本地打包构建 (Build from Source)
 
 **环境准备：**
